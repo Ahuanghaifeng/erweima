@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/com/example/request/android/volley/JsonRequestImpl.java=UTF-8
+encoding//src/com/example/request/android/volley/JsonStringRequest.java=UTF-8
+encoding//src/com/example/request/android/volley/RequestString.java=UTF-8
+encoding//src/com/example/request/android/volley/StringRequestJson.java=UTF-8
+encoding//src/com/example/request/api/json/BaseParser.java=UTF-8
+encoding//src/com/example/request/api/json/JsonRequestManager.java=UTF-8
+encoding//src/com/example/request/upload/HttpRequester.java=UTF-8
+encoding//src/com/example/request/upload/UpLoadImageHelper.java=UTF-8

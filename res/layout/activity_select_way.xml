@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qgary">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="请选择报到方式"
+        android:textSize="45sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout 
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+        <Button
+            android:textColor="#FFFFFF"
+            android:background="@drawable/base_button_bg"
+            android:id="@+id/erweima"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="微信报到（推荐）"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="注：此方式更加快捷方便"
+            android:textColor="@color/red"
+            android:textSize="30sp" />
+
+        <Button
+            android:textColor="#FFFFFF"
+            android:background="@drawable/base_button_bg"
+            android:id="@+id/sfcard"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="身份证报到"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="注：以后将停用身份证报到方式，推荐学习微信报道"
+            android:textColor="@color/red"
+            android:textSize="30sp" />
+            
+        </LinearLayout>
+        
+        
+    </RelativeLayout>
+
+    <include layout="@layout/back" />
+
+</RelativeLayout>

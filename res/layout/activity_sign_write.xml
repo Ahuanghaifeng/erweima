@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qgary" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="160dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/select_rect_bg" >
+
+        <TextView
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="请签名" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.app.view.SignView
+                android:id="@+id/signView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp" >
+            </com.app.view.SignView>
+            
+             <com.app.view.WangGeView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp" />
+            
+         <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="80dp"  
+            android:indeterminate="false"  
+            android:indeterminateDrawable="@drawable/my_progress_bar_color" />
+            
+        </FrameLayout>
+    </RelativeLayout>
+
+    <LinearLayout 
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        
+    <TextView
+        android:textColor="#FFFFFF"
+        android:id="@+id/tv_clear"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/base_button_bg"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="擦除重签"
+        android:textSize="35sp" />
+        
+    <TextView
+        android:layout_marginLeft="100dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tv_commit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/base_button_bg"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="确认"
+        android:textSize="35sp" />
+        
+    </LinearLayout>
+    
+    
+
+    <include layout="@layout/back" />
+
+</RelativeLayout>

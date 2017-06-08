@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/qgary" >
+
+    
+    <ImageView 
+        android:id="@+id/iv_bg"
+        android:layout_centerInParent="true"
+        android:src="@drawable/sfz_one"
+        android:layout_height="550dp"
+        android:layout_width="550dp"/>
+    
+    
+    <Button
+        android:textColor="#FFFFFF"
+        android:background="@drawable/base_button_bg"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/iv_bg"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:id="@+id/btn_IdentifyRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击读取身份证" />
+    
+    <include layout="@layout/back"/>
+    
+</RelativeLayout>
