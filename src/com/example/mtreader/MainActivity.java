@@ -1,21 +1,13 @@
 package com.example.mtreader;
 
 
-import java.util.List;
-
 import com.app.activity.SelectWayActivity;
 import com.app.utils.ToastUtil;
 import com.example.erweima.R;
 import com.example.mtreader.RootCmd;
-import com.example.request.api.json.JsonRequestManager;
-
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,7 +15,6 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -37,7 +28,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		forbiddenHomeKey();
 		System.loadLibrary("mt3x32");
 		init();
 		int dev = mt8deviceopen(0,115200);
@@ -70,34 +60,6 @@ public class MainActivity extends Activity {
 	    View mEmptyView = new View(this);  
 	    mWindowManager.addView(mEmptyView, mWindowManagerParams);  
 	}
-
-    
-    @Override
-    protected void onPause() {
-    	// TODO Auto-generated method stub
-    	super.onPause();
-//    	if(isAppForeground(this)){
-    		ActivityManager activityManager = (ActivityManager) getApplicationContext()
-                    .getSystemService(Context.ACTIVITY_SERVICE);
-            activityManager.moveTaskToFront(getTaskId(), 0);
-//    	}
-//    	ActivityManager mAm = (ActivityManager)getSystemService(this.ACTIVITY_SERVICE);  
-//        //获得当前运行的task  
-//        List<ActivityManager.RunningTaskInfo> taskList = mAm.getRunningTasks(100);  
-//        for (ActivityManager.RunningTaskInfo rti : taskList) {  
-//            //找到当前应用的task，并启动task的栈顶activity，达到程序切换到前台  
-//            if(rti.topActivity.getPackageName().equals(getPackageName())) {  
-//                try {  
-//                    Intent  resultIntent = new Intent(this, Class.forName(rti.topActivity.getClassName()));  
-//                    resultIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);  
-//                    this.startActivity(resultIntent);
-//                }catch (ClassNotFoundException e) {  
-//                    e.printStackTrace();  
-//                }  
-//                return;  
-//            }  
-//        }  
-    }
 	
 	private OnClickListener onClickListener = new OnClickListener() {
 		

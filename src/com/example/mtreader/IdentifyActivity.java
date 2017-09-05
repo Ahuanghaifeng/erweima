@@ -103,6 +103,7 @@ public class IdentifyActivity extends Activity {
 							e.printStackTrace();
 						}
 						MyApp.idCard = StrIDNo;
+						MyApp.userName = name;
 						Intent intent = new Intent(IdentifyActivity.this,
 								SelectClassesActivity.class);
 					    intent.putExtra("name", name);
@@ -117,7 +118,6 @@ public class IdentifyActivity extends Activity {
 				}
 			}
 		});
-//		resetTime();
 	}
 	
 	public void CheckUser(final String str){
@@ -143,31 +143,4 @@ public class IdentifyActivity extends Activity {
 			}
 		});
 	}
-	
-//	@Override  
-//    public boolean dispatchTouchEvent(MotionEvent ev) {  
-//        resetTime();  
-//        return super.dispatchTouchEvent(ev);  
-//    }  
-//      
-//    private void resetTime() {  
-//        // TODO Auto-generated method stub  
-//        mHandler.removeMessages(SHOW_ANOTHER_ACTIVITY);//從消息隊列中移除  
-//        Message msg = mHandler.obtainMessage(SHOW_ANOTHER_ACTIVITY);  
-//        mHandler.sendMessageDelayed(msg, 1000*60*2);//無操作2分钟后進入屏保  
-//    }  
-//      
-//    private Handler mHandler = new Handler()  
-//    {  
-//        @Override  
-//        public void handleMessage(Message msg) {  
-//            // TODO Auto-generated method stub  
-//            super.handleMessage(msg);  
-//            if(msg.what==SHOW_ANOTHER_ACTIVITY)  
-//            {  
-//                 Intent intent=new Intent(IdentifyActivity.this,MainActivity.class);  
-//                 startActivity(intent);  
-//            }  
-//        }  
-//    };  
 }

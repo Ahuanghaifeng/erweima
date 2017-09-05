@@ -81,7 +81,7 @@ public class RequestManager {
 	 * @param filePath
 	 * @param responseListener
 	 */
-	public static void checkIn(String idcard,ArrayList<String> uuids,String fileuuid,String filepath,ResponseListener<CheckInResponse> responseListener){
+	public static void checkIn(String idcard,String username,ArrayList<String> uuids,String fileuuid,String filepath,ResponseListener<CheckInResponse> responseListener){
 //		JSONObject jsonObject = new JSONObject();
 //		try {
 //			jsonObject.put("idcard", "429004199409170738");
@@ -107,7 +107,7 @@ public class RequestManager {
 		}
 //		map.put("uuid", uuid);
 //		map.put("file_url", filepath);
-		String url = Constans.ServiceUrl+"check_in?"+"idcard="+idcard+"&file_uuid="+fileuuid+"&uuid="+uuid+"&file_url="+filepath;
+		String url = Constans.ServiceUrl+"check_in?"+"idcard="+idcard+"&name="+username+"&file_uuid="+fileuuid+"&uuid="+uuid+"&file_url="+filepath;
 		JsonRequestManager.getInstance().request(Method.GET, url, map, new CheckInParser(), responseListener);
 	}
 }

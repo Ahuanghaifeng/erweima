@@ -45,7 +45,8 @@
         
         <activity 
             android:screenOrientation="landscape"
-            android:name="com.app.activity.SelectWayActivity"></activity>
+            android:name="com.app.activity.SelectWayActivity">
+        </activity>
         
         <activity 
             android:screenOrientation="landscape"

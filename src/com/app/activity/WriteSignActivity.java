@@ -129,7 +129,7 @@ public class WriteSignActivity extends BaseActivity {
 	
 	public void checkIn(String fileuuid,String filepath){
 		ToastUtil.showToast(this, "正在报到,请稍后!");
-		RequestManager.checkIn(MyApp.idCard, uuids, fileuuid,filepath, new ResponseListener<CheckInResponse>() {
+		RequestManager.checkIn(MyApp.idCard,MyApp.userName,uuids, fileuuid,filepath, new ResponseListener<CheckInResponse>() {
 			
 			@Override
 			public void onResponse(CheckInResponse result) {

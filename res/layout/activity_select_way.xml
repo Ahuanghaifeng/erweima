@@ -25,7 +25,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             
+         <Button
+            android:textColor="#FFFFFF"
+            android:background="@drawable/base_button_bg"
+            android:id="@+id/sfcard"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"        
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="身份证报到（推荐）"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="注：请关注学校微信公众号绑定身份，便于接收通知"
+            android:textColor="@color/red"
+            android:textSize="30sp" />
+
         <Button
+            android:layout_marginTop="80dp"
             android:textColor="#FFFFFF"
             android:background="@drawable/base_button_bg"
             android:id="@+id/erweima"
@@ -33,10 +54,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="微信报到（推荐）"
+            android:text="微信报到"
             android:textSize="45sp"
             android:textStyle="bold" />
-
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,30 +65,18 @@
             android:text="注：此方式更加快捷方便"
             android:textColor="@color/red"
             android:textSize="30sp" />
-
-        <Button
-            android:textColor="#FFFFFF"
-            android:background="@drawable/base_button_bg"
-            android:id="@+id/sfcard"
-            android:layout_width="450dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="身份证报到"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="注：以后将停用身份证报到方式，推荐学习微信报道"
-            android:textColor="@color/red"
-            android:textSize="30sp" />
             
         </LinearLayout>
         
+        <ImageView
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentBottom="true"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:src="@drawable/wx_one" >
+            </ImageView>
         
     </RelativeLayout>
 
