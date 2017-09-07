@@ -107,6 +107,7 @@ public class RequestManager {
 		}
 //		map.put("uuid", uuid);
 //		map.put("file_url", filepath);
+//		map.put("name", username);
 		String url = Constans.ServiceUrl+"check_in?"+"idcard="+idcard+"&name="+username+"&file_uuid="+fileuuid+"&uuid="+uuid+"&file_url="+filepath;
 		JsonRequestManager.getInstance().request(Method.GET, url, map, new CheckInParser(), responseListener);
 	}

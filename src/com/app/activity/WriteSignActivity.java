@@ -133,14 +133,14 @@ public class WriteSignActivity extends BaseActivity {
 			
 			@Override
 			public void onResponse(CheckInResponse result) {
-				if("200".equals(result.code)){
+				if("成功".equals(result.message)){
 					commit.setClickable(true);
 					bar.setVisibility(View.GONE);
 					Intent intent = new Intent(WriteSignActivity.this,BDSuccessActivity.class);
 					startActivity(intent);
 					finish();
 				}else{
-					ToastUtil.showToast(WriteSignActivity.this, "报道失败");
+					ToastUtil.showToast(WriteSignActivity.this, "报道失败"+result.message);
 				}
 				
 			}
