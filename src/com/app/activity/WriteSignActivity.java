@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import com.android.volley.VolleyError;
@@ -27,6 +29,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ProgressBar;
@@ -129,28 +132,59 @@ public class WriteSignActivity extends BaseActivity {
 	
 	public void checkIn(String fileuuid,String filepath){
 		ToastUtil.showToast(this, "正在报到,请稍后!");
-		RequestManager.checkIn(MyApp.idCard,MyApp.userName,uuids, fileuuid,filepath, new ResponseListener<CheckInResponse>() {
-			
-			@Override
-			public void onResponse(CheckInResponse result) {
-				if("成功".equals(result.message)){
-					commit.setClickable(true);
-					bar.setVisibility(View.GONE);
-					Intent intent = new Intent(WriteSignActivity.this,BDSuccessActivity.class);
-					startActivity(intent);
-					finish();
-				}else{
-					ToastUtil.showToast(WriteSignActivity.this, "报道失败"+result.message);
+		if(!TextUtils.isEmpty(MyApp.userName)){
+			try {
+				String name = URLEncoder.encode(MyApp.userName, "UTF-8");
+				RequestManager.checkIn(MyApp.idCard,name,uuids, fileuuid,filepath, new ResponseListener<CheckInResponse>() {
+					
+					@Override
+					public void onResponse(CheckInResponse result) {
+						if("成功".equals(result.message)){
+							commit.setClickable(true);
+							bar.setVisibility(View.GONE);
+							Intent intent = new Intent(WriteSignActivity.this,BDSuccessActivity.class);
+							startActivity(intent);
+							finish();
+						}else{
+							ToastUtil.showToast(WriteSignActivity.this, "报道失败"+result.message);
+						}
+						
+					}
+					
+					@Override
+					public void onError(VolleyError error) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}else{
+			RequestManager.checkIn(MyApp.idCard,MyApp.userName,uuids, fileuuid,filepath, new ResponseListener<CheckInResponse>() {
+				
+				@Override
+				public void onResponse(CheckInResponse result) {
+					if("成功".equals(result.message)){
+						commit.setClickable(true);
+						bar.setVisibility(View.GONE);
+						Intent intent = new Intent(WriteSignActivity.this,BDSuccessActivity.class);
+						startActivity(intent);
+						finish();
+					}else{
+						ToastUtil.showToast(WriteSignActivity.this, "报道失败"+result.message);
+					}
+					
 				}
 				
-			}
-			
-			@Override
-			public void onError(VolleyError error) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+				@Override
+				public void onError(VolleyError error) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+		}
 	}
 	
 	/**
